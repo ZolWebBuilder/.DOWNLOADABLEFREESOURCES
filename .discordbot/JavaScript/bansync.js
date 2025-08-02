@@ -1,7 +1,7 @@
 const BOT_TOKEN = 'no'
-const CLIENT_ID = '1396676390501224518'
-const MAIN_SERVER_ID = '1270341588882559048'
-const OWNER_ID = '938303388137971713'
+const CLIENT_ID = 'no'
+const MAIN_SERVER_ID = 'no'
+const OWNER_ID = 'no'
 
 const { Client, GatewayIntentBits, Events, REST, Routes, SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, InteractionType, ComponentType } = require('discord.js')
 const fs = require('fs')
