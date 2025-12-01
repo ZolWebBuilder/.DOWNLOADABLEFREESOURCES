@@ -1,5 +1,54 @@
-// Discord.js v14+ Bot
-// This bot monitors a specific Discord channel and sends Roblox badge reports
+/**
+ * ============================================================
+ *                    ROBLOX BADGE REPORT BOT
+ * ============================================================
+ *
+ * HOW TO USE THIS BOT:
+ *
+ * 1. Install dependencies:
+ *      - Node.js v18+ is required.
+ *      - Run `npm install discord.js node-fetch` in your project folder.
+ *
+ * 2. Configure the bot:
+ *      - Set your Discord bot token in the `DiscordToken` variable.
+ *      - Set the channel ID you want the bot to monitor in `MonitoredChannelId`.
+ *      - Set the emoji IDs for loading (`LoadingEmojiId`), success (`SuccessEmoji`), and invalid (`InvalidEmoji`) reactions.
+ *
+ * 3. Run the bot:
+ *      - Use `node index.js` (or the filename you saved this as) to start the bot.
+ *      - Ensure the bot has permission to read/send messages, add reactions, and pin messages in the monitored channel.
+ *
+ * 4. Usage instructions in Discord:
+ *      - Send a message in the monitored channel with the following format:
+ *          User: <Roblox username or UID>
+ *          Game: <Place ID>
+ *      - Example:
+ *          User: BuilderMan
+ *          Game: 123456789
+ *      - The bot will:
+ *          • React with a loading emoji while processing
+ *          • Resolve the Roblox user
+ *          • Fetch all universe badges for the given game
+ *          • Compare badges to determine obtained/missing
+ *          • Send a text report via DM to the user
+ *          • React with ✅ if DM is sent successfully, or ❌ and delete the message if invalid
+ *
+ * IMPORTANT NOTES:
+ *  - This bot is intended for **personal use or a single server** only.
+ *    Multi-server or public bot usage may cause errors or conflicts.
+ *  - Make sure the bot has **DM permissions enabled** for users.
+ *  - Only one instance should run at a time to avoid duplicate processing.
+ *  - Always respect Roblox and Discord API rate limits; excessive requests may get your bot blocked.
+ *  - This bot does not store any data permanently; all processing is done in memory during runtime.
+ *
+ * DEBUGGING:
+ *  - The bot has extensive `console.debug()` logs.
+ *  - Check the console to trace step-by-step operations or find errors.
+ *
+ * ============================================================
+ *                     END OF INSTRUCTIONS
+ * ============================================================
+ */
 
 import {
   Client, // Main Discord client class
